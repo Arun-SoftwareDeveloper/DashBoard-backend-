@@ -4,6 +4,7 @@ const UserSchema = new mongoose.Schema({
   firstName: {
     type: String,
     required: true,
+    min: 4,
   },
   lastName: {
     type: String,
@@ -22,6 +23,18 @@ const UserSchema = new mongoose.Schema({
   },
   resetToken: {
     type: String,
+  },
+  phoneNumber: {
+    type: String,
+    required: true,
+  },
+  dateOfBirth: {
+    type: Date,
+    required: true,
+  },
+  active: {
+    type: Boolean,
+    default: true, // or false, depending on your default state
   },
 });
 
